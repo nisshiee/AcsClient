@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     build    
+     jarを生成します
+                   
+     Hirokazu NISHIOKA                                                                
+     ====================================================================== -->
+<project name="buildJar" default="default">
+	<description>
+		jarを生成します
+    </description>
+
+	<property name="jardir" location="dist" />
+	<property name="jarfile" location="dist/AcsClient.jar" />
+
+	<property name="srcdir" location="./src" />
+	<property name="classdir" location="./bin" />
+
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="default" depends="compile" description="jarを生成します">
+		<mkdir dir="${jardir}" />
+		<jar destfile="${jarfile}">
+			<fileset dir="${classdir}" id="class">
+				<include name="**/*.class" />
+			</fileset>
+			<fileset dir="${srcdir}" id="src">
+				<include name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="compile">
+		<javac srcdir="${srcdir}" destdir="${classdir}" encoding="UTF-8" />
+	</target>
+
+</project>

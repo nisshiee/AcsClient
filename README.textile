@@ -1,0 +1,6 @@
+h1. AcsClient
+
+Title: AcsClient
+Author: Hirokazu NISHIOKA<hiro@nisshiee.org>
+License: "Creative Commons 表示 2.1 日本 License.":http://creativecommons.org/licenses/by/2.1/jp/
+
